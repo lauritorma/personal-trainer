@@ -64,7 +64,7 @@ export default function Traininglist() {
 
     const [columnDefs, setColumnDefs] = useState([
         { field: "activity" },
-        { field: "date" },
+        { field: "date", valueFormatter: params => format(new Date(params.value), "dd.MM.yyyy") },
         { field: "duration" },
         { field: "customer.firstname", headerName: "First name" },
         { field: "customer.lastname", headerName: "Last name" },

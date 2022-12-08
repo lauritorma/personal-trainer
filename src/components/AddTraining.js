@@ -8,6 +8,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { AdapterDateFns, filocale } from '@mui/x-date-pickers/AdapterDateFns';
 import Select from 'react-select'
 
 export default function AddTraining(props) {
@@ -69,13 +70,13 @@ export default function AddTraining(props) {
                         fullWidth
                         variant="standard"
                     />
-                     <LocalizationProvider dateAdapter={AdapterDayjs}>
+                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                      <DatePicker
                       label="Date"
-                      value={date}
-                      onChange={(newDate) => {
-                       setDate(newDate).toISOString();
-                    }}
+                      value={training.date}
+                      onChange={value => 
+                       setTraining({...training, date: value})
+                    }
                       renderInput={(params) => <TextField {...params} />}/>
                      </LocalizationProvider>
                     
