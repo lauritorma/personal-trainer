@@ -40,8 +40,8 @@ export default function EditCustomer ({updateCustomer, params}) {
 
     return (
         <div>
-            <Button  color="secondary" style={{ margin: 10 }} variant="outlined" onClick={handleClickOpen}>
-                Edit Customer
+            <Button  color="secondary" style={{ margin: 0 }} variant="outlined" onClick={handleClickOpen}>
+                Edit
             </Button>
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>Edit customer</DialogTitle>

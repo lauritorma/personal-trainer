@@ -7,6 +7,7 @@ import AddTraining from './AddTraining';
 import EditTraining from './EditTraining';
 import DeleteTraining from './DeleteTraining';
 import Button from '@mui/material/Button';
+import { CSVLink, CSVDownload } from "react-csv";
 
 
 export default function Traininglist() {

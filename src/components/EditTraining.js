@@ -58,8 +58,8 @@ export default function EditTraining ({updateTraining, params}) {
     customers.map(customer => ({value: customer.firstname + customer.lastname, label: customer.firstname + " " + customer.lastname}))
     return (
         <div>
-            <Button style={{ margin: 10 }} variant="outlined" onClick={handleClickOpen}>
-                Edit Training
+            <Button style={{ margin: 0 }} variant="outlined" onClick={handleClickOpen}>
+                Edit
             </Button>
             <Dialog onClose={handleClose} open={open} sx={{ "& .MuiDialog-container": { "& .MuiPaper-root": { width: "100%", maxWidth: "600px", height: "100%", maxHeight: "600px" } } }}>
                 <DialogTitle>Edit training session</DialogTitle>
