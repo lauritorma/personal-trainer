@@ -59,7 +59,7 @@ export default function Customerlist() {
     }
 
     const [columnDefs, setColumnDefs] = useState([
-        { field: "firstname", sortable: true, filter: true, },
+        { field: "firstname", sortable: true, filter: true },
         { field: "lastname", sortable: true, filter: true },
         { field: "email", sortable: true, filter: true },
         { field: "phone", sortable: true, filter: true },

@@ -63,11 +63,11 @@ export default function Traininglist() {
     };
 
     const [columnDefs, setColumnDefs] = useState([
-        { field: "activity" },
-        { field: "date", valueFormatter: params => format(new Date(params.value), "dd.MM.yyyy hh:mm") },
-        { field: "duration" },
-        { field: "customer.firstname", headerName: "First name" },
-        { field: "customer.lastname", headerName: "Last name" },
+        { field: "activity", sortable: true, filter: true },
+        { field: "date", valueFormatter: params => format(new Date(params.value), "dd.MM.yyyy hh:mm"), sortable: true, filter: true },
+        { field: "duration", sortable: true, filter: true },
+        { field: "customer.firstname", headerName: "First name", sortable: true, filter: true },
+        { field: "customer.lastname", headerName: "Last name", sortable: true, filter: true },
         {
             headerName: "",
             width: 100,
