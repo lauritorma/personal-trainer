@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { CSVLink } from "react-csv";
+import Button from '@mui/material/Button';
  
 const headers = [
     {
@@ -67,7 +68,7 @@ class AsyncCSV extends Component {
  
     return (
       <div>
-        <input type="button" value="Export to CSV" onClick={this.downloadReport} />
+        <Button style={{ margin: 20 }} variant="outlined" color="secondary" size="small" onClick={this.downloadReport}>Export customer-list to CSV</Button>
         <CSVLink
           headers={headers}
           filename="Customers.csv"
