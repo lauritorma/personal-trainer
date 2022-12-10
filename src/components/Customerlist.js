@@ -6,6 +6,9 @@ import AddCustomer from "./AddCustomer";
 import EditCustomer from "./EditCustomer";
 import DeleteCustomer from "./DeleteCustomer";
 import { CSVLink, CSVDownload } from "react-csv";
+import { ExportJsonCsv } from 'react-export-json-csv';
+import Button from '@mui/material/Button';
+import AsyncCSV from "./AsyncCSV";
 
 export default function Customerlist() {
 
@@ -84,11 +87,13 @@ export default function Customerlist() {
         },
     ]);
 
+
     return (
 
         <div className="ag-theme-material"
             style={{ height: '600px', width: '100%' }}>
             <AddCustomer saveCustomer={saveCustomer}/>
+            <AsyncCSV />
             <AgGridReact
 
                 filterable={true}
