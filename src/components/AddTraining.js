@@ -11,6 +11,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { AdapterDateFns, filocale } from '@mui/x-date-pickers/AdapterDateFns';
 import Select from 'react-select'
+import fiLocale from 'date-fns/locale/fi';
 
 export default function AddTraining({saveTraining}) {
     const [date, setDate] = React.useState(new Date);
@@ -71,7 +72,7 @@ export default function AddTraining({saveTraining}) {
                         fullWidth
                         variant="standard"
                     />
-                     <LocalizationProvider dateAdapter={AdapterDateFns}>
+                     <LocalizationProvider dateAdapter={AdapterDateFns}  adapterLocale={fiLocale}>
                      <DateTimePicker
                       label="Date"
                       value={training.date}
