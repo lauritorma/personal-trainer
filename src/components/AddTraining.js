@@ -8,16 +8,17 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { AdapterDateFns, filocale } from '@mui/x-date-pickers/AdapterDateFns';
 import Select from 'react-select'
 
-export default function AddTraining(props) {
+export default function AddTraining({saveTraining}) {
     const [date, setDate] = React.useState(new Date);
     const [open, setOpen] = React.useState(false);
     const [customers, setCustomers] = React.useState([]);
     const [training, setTraining] = React.useState({
        activity: '', date: '', duration: '', firstname: '', lastname: ''
-    })
+    });
 
     const fetchCustomers = () => {
         fetch("https://customerrest.herokuapp.com/api/customers")
@@ -44,7 +45,7 @@ export default function AddTraining(props) {
     }
 
     const addTraining = () => {
-        props.saveTraining(training);
+        saveTraining(training);
         handleClose();
     }
 
@@ -71,7 +72,7 @@ export default function AddTraining(props) {
                         variant="standard"
                     />
                      <LocalizationProvider dateAdapter={AdapterDateFns}>
-                     <DatePicker
+                     <DateTimePicker
                       label="Date"
                       value={training.date}
                       onChange={value => 
@@ -103,4 +104,3 @@ export default function AddTraining(props) {
         </div>
     );
 }
-
