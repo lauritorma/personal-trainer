@@ -62,6 +62,7 @@ export default function AddTraining({saveTraining}) {
             <Dialog onClose={handleClose} open={open} sx={{ "& .MuiDialog-container": { "& .MuiPaper-root": { width: "100%", maxWidth: "600px", height: "100%", maxHeight: "600px" } } }}>
                 <DialogTitle>Add new training session</DialogTitle>
                 <DialogContent>
+                    <b>Activity</b>
                     <TextField
                         autoFocus
                         margin="dense"
@@ -72,6 +73,9 @@ export default function AddTraining({saveTraining}) {
                         fullWidth
                         variant="standard"
                     />
+                    <div style={{margin: 20}}></div>
+                    <b>Date and time of session</b>
+                    <div style={{margin: 20}}></div>
                      <LocalizationProvider dateAdapter={AdapterDateFns}  adapterLocale={fiLocale}>
                      <DateTimePicker
                       label="Date"
@@ -81,7 +85,8 @@ export default function AddTraining({saveTraining}) {
                     }
                       renderInput={(params) => <TextField {...params} />}/>
                      </LocalizationProvider>
-                    
+                     <div style={{margin: 20}}></div>
+                    <b>Duration of session</b> 
                     <TextField
                         margin="dense"
                         name="duration"
@@ -91,6 +96,9 @@ export default function AddTraining({saveTraining}) {
                         fullWidth
                         variant="standard"
                     />
+                    <div style={{margin: 20}}></div>
+                    <b>Customer</b>
+                    <div style={{margin: 20}}></div>
                      <Select options={customerOptions} />
                 </DialogContent>
                 <DialogActions>
